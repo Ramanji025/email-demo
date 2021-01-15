@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.8.0.final using JasperReports Library version 6.8.0-2ed8dfabb690ff337a5797129f2cd92902b0c87b  -->
+<!-- Created with Jaspersoft Studio version 7.9.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4" pageWidth="595" pageHeight="842" columnWidth="575" leftMargin="10" rightMargin="10" topMargin="2" bottomMargin="2" uuid="637a91ce-06f5-4369-b593-d2e928328964">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
 	<style name="Table_TH" mode="Opaque" backcolor="#4682B4">
@@ -123,9 +123,9 @@
 		<field name="writeCount" class="java.lang.Integer"/>
 		<field name="skipCount" class="java.lang.Integer"/>
 	</subDataset>
-	<parameter name="MyCBeanParam" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
-	<parameter name="MyCBeanParam2" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
-	<parameter name="MyCBeanParam3" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<parameter name="beneficiaryData" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<parameter name="clientUsersData" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<parameter name="paymentsData" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
 	<queryString>
 		<![CDATA[]]>
 	</queryString>
@@ -136,7 +136,7 @@
 		<band height="40" splitType="Stretch">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<staticText>
-				<reportElement mode="Opaque" x="-21" y="-3" width="596" height="40" forecolor="#FFFFFF" backcolor="#006699" uuid="851543bd-45e8-46fe-bd10-da717caff244"/>
+				<reportElement mode="Opaque" x="-11" y="-2" width="596" height="40" forecolor="#FFFFFF" backcolor="#006699" uuid="851543bd-45e8-46fe-bd10-da717caff244"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="19"/>
 				</textElement>
@@ -147,7 +147,7 @@
 	<detail>
 		<band height="54" splitType="Stretch">
 			<componentElement>
-				<reportElement x="81" y="9" width="300" height="38" uuid="2531555f-99dd-42e4-8c11-e956b081bf07">
+				<reportElement x="-72" y="9" width="300" height="38" uuid="2531555f-99dd-42e4-8c11-e956b081bf07">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 					<property name="com.jaspersoft.studio.table.style.table_header" value="Table 1_TH"/>
 					<property name="com.jaspersoft.studio.table.style.column_header" value="Table 1_CH"/>
@@ -155,7 +155,7 @@
 				</reportElement>
 				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
 					<datasetRun subDataset="usersDataSet" uuid="fc2ffc81-10df-4399-94a4-860d7f514c98">
-						<dataSourceExpression><![CDATA[$P{MyCBeanParam2}]]></dataSourceExpression>
+						<dataSourceExpression><![CDATA[$P{clientUsersData}]]></dataSourceExpression>
 					</datasetRun>
 					<jr:columnGroup width="240" uuid="de1b8b64-c223-4014-af62-a50e529eb230">
 						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Columns [4]"/>
@@ -275,7 +275,7 @@
 				</reportElement>
 				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
 					<datasetRun subDataset="consolidated" uuid="52516ae1-4f1c-4b67-864f-cc68ef7b2b96">
-						<dataSourceExpression><![CDATA[$P{MyCBeanParam}]]></dataSourceExpression>
+						<dataSourceExpression><![CDATA[$P{beneficiaryData}]]></dataSourceExpression>
 					</datasetRun>
 					<jr:columnGroup width="240" uuid="b83117ac-0dde-4362-bae8-88b4098db2c7">
 						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Columns [4]"/>
@@ -402,7 +402,7 @@
 				</reportElement>
 				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
 					<datasetRun subDataset="transfersDataSet" uuid="6f7e7305-b35d-4b31-823e-3ee28bfcd1d1">
-						<dataSourceExpression><![CDATA[$P{MyCBeanParam3}]]></dataSourceExpression>
+						<dataSourceExpression><![CDATA[$P{paymentsData}]]></dataSourceExpression>
 					</datasetRun>
 					<jr:columnGroup width="240" uuid="fd2ea165-029a-455d-a388-9a09b4f3ed53">
 						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Columns [4]"/>
